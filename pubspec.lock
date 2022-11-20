@@ -43,6 +43,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.9.0"
+  audio_streamer:
+    dependency: transitive
+    description:
+      name: audio_streamer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.0"
   ble_reader:
     dependency: "direct main"
     description:
@@ -513,6 +520,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  noise_meter:
+    dependency: "direct main"
+    description:
+      name: noise_meter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   package_config:
     dependency: transitive
     description:

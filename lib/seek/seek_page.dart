@@ -1,3 +1,4 @@
+import 'package:c/seek/widgets/sound_lvl_stats_card.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -8,12 +9,29 @@ class SeekPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
-        CustomAppBar(),
-        Spacer(),
-      ],
+    return NeumorphicBackground(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        child: ListView(
+          children: [
+            const CustomAppBar(),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Seek your target',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline2!
+                  .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            SoundLVLStatsCard(),
+          ],
+        ),
+      ),
     );
   }
 }

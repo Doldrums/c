@@ -32,6 +32,7 @@ dependencies:
   adaptive_dialog: ^1.8.0+1
   emojis: ^0.9.9
   freezed_annotation: ^2.2.0
+  noise_meter: ^3.1.0
 
 dev_dependencies:
   flutter_test:

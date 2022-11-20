@@ -61,11 +61,11 @@ class HomePage extends HookConsumerWidget {
                 child: RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
-                    text: 'Operation'.toUpperCase(),
+                    text: 'Game of'.toUpperCase(),
                     style: Theme.of(context).textTheme.titleLarge!,
                     children: <TextSpan>[
                       TextSpan(
-                        text: '\nSecret Pine',
+                        text: '\nhide and seek',
                         style: Theme.of(context).textTheme.bodyMedium!,
                       ),
                     ],
