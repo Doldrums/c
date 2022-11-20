@@ -1,6 +1,8 @@
 PODS:
   - audio_streamer (0.0.1):
     - Flutter
+  - audioplayers_darwin (0.0.1):
+    - Flutter
   - ble_reader (0.0.1):
     - Flutter
   - Flutter (1.0.0)
@@ -34,6 +36,7 @@ PODS:
 
 DEPENDENCIES:
   - audio_streamer (from `.symlinks/plugins/audio_streamer/ios`)
+  - audioplayers_darwin (from `.symlinks/plugins/audioplayers_darwin/ios`)
   - ble_reader (from `.symlinks/plugins/ble_reader/ios`)
   - Flutter (from `Flutter`)
   - flutter_blue (from `.symlinks/plugins/flutter_blue/ios`)
@@ -55,6 +58,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   audio_streamer:
     :path: ".symlinks/plugins/audio_streamer/ios"
+  audioplayers_darwin:
+    :path: ".symlinks/plugins/audioplayers_darwin/ios"
   ble_reader:
     :path: ".symlinks/plugins/ble_reader/ios"
   Flutter:
@@ -80,6 +85,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   audio_streamer: af49e73eb66f71c4eeabb4bbcb05f122d03a6709
+  audioplayers_darwin: 877d9a4d06331c5c374595e46e16453ac7eafa40
   ble_reader: 343d41e4e7c468f3ad50506a327fd29e61ec9d3b
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_blue: eeb381dc4727a0954dede73515f683865494b370

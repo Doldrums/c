@@ -34,21 +34,8 @@ final connectionStateStreamProvider =
 
 final recordingStateProvider = StateProvider<bool>((ref) => false);
 
-final approximateDistance = StateProvider<num>((ref) {
-  late num approximateDistance;
-  final instance = ref.watch(bleProvider);
-  instance.maybeWhen(connected: (ConnectionDetails details) async {
-    num? rssi = details.rssi;
-    if (rssi != null) {
-      rssi = rssi.toDouble();
-      approximateDistance = pow(10, ((-25 - rssi) / (10 * 2.4)));
-    } else {
-      approximateDistance = 0;
-    }
-  }, orElse: () {
-    return approximateDistance = 0;
-  });
-  return approximateDistance;
+final modeProvider = StateProvider<bool>((ref) {
+  return true;
 });
 
 class BLENotifier extends StateNotifier<BleState> {

@@ -1,4 +1,5 @@
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:c/hide/provider/ble_provider.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -9,7 +10,7 @@ class ModeSwitch extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isEnabled = useState(false);
+    final isEnabled = ref.read(modeProvider);
     return SizedBox(
       width: 300.0,
       height: 300.0,
@@ -32,14 +33,19 @@ class ModeSwitch extends HookConsumerWidget {
             margin: const EdgeInsets.all(10),
             child: Center(
               child: Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: NeumorphicSwitch(
-                    value: isEnabled.value,
-                    onChanged: (value) {
-                      isEnabled.value = !isEnabled.value;
-                      onPressed?.call();
-                    },
-                  )),
+                padding: const EdgeInsets.all(18.0),
+                child: NeumorphicSwitch(
+                  value: isEnabled,
+                  onChanged: (value) {
+                    onPressed?.call();
+                    if (isEnabled) {
+                      final player = AudioPlayer();
+                      player
+                          .play(UrlSource('https://mobcup.net/d/c3lpbxp8/mp3'));
+                    }
+                  },
+                ),
+              ),
             ),
           ),
         ),

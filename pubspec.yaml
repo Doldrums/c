@@ -34,6 +34,7 @@ dependencies:
   freezed_annotation: ^2.2.0
   noise_meter: ^3.1.0
   smooth_compass: ^1.0.5
+  audioplayers: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -42,3 +43,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+assets:
+  - assets/bird.mp3
