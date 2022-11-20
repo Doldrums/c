@@ -19,9 +19,9 @@ sequenceDiagram
     participant Flutter_Blue_Plugin
     Flutter_Blue_Plugin->>Device: Uint8List stream 
     loop BLE_Reader_Plugin
-        Device->>Device: EventChannel.receiveBroadcastStream()
+        Device<<->>Device: EventChannel.receiveBroadcastStream()
     end
-    Flutter_Blue_Plugin->>Device: Uint8List stream 
+    Flutter_Blue_Plugin<<->>Device: Uint8List stream 
     Note right of Device: Listening on BLE <br/>network!
 ```
 
