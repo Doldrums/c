@@ -44,7 +44,7 @@ class HomePage extends HookConsumerWidget {
                           Center(
                             child: Padding(
                               padding: const EdgeInsets.all(12.0),
-                              child: Text('${Emoji.byName('evergreen tree')}',
+                              child: Text('${Emoji.byName('man detective')}',
                                   style: const TextStyle(fontSize: 56)),
                             ),
                           ),
@@ -78,20 +78,20 @@ class HomePage extends HookConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 BehaviorButton(
-                  title: 'Establish host',
+                  title: 'Be a seeker',
                   onPressed: () => Navigator.pushNamed(
                     context,
-                    '/host',
+                    '/seek',
                   ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 BehaviorButton(
-                  title: 'Connect host',
+                  title: 'Try to hide',
                   onPressed: () => Navigator.pushNamed(
                     context,
-                    '/client',
+                    '/hide',
                   ),
                 ),
               ],
