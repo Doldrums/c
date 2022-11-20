@@ -80,28 +80,31 @@ class SoundLVLStatsCardState extends State<SoundLVLStatsCard> {
   @override
   Widget build(BuildContext context) {
     return NeumorphicCardBase(
-      content: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            getContent(),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: NeumorphicButton(
-                onPressed: _isRecording ? stop : start,
-                style: NeumorphicStyle(
-                  depth: 20,
-                  surfaceIntensity: 1,
-                  boxShape: NeumorphicBoxShape.roundRect(
-                    BorderRadius.circular(8),
+      content: SizedBox(
+        height: 200,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              getContent(),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: NeumorphicButton(
+                  onPressed: _isRecording ? stop : start,
+                  style: NeumorphicStyle(
+                    depth: 20,
+                    surfaceIntensity: 1,
+                    boxShape: NeumorphicBoxShape.roundRect(
+                      BorderRadius.circular(8),
+                    ),
                   ),
+                  child: _isRecording
+                      ? const Icon(Icons.stop)
+                      : const Icon(Icons.mic),
                 ),
-                child: _isRecording
-                    ? const Icon(Icons.stop)
-                    : const Icon(Icons.mic),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
