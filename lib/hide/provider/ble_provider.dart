@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:ble_reader/ble_reader.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -92,17 +93,13 @@ class BLENotifier extends StateNotifier<BleState> {
         (c) => c.uuid == Guid('7db3e235-3608-41f3-a03c-955fcbd2ea4b'));
   }
 
-  Future<void> sendSamples(List<int> voice) async {
+  Future<void> sendInfoByBLE() async {
     if (messageCharacteristic == null) return;
-    for (var start = 0; start < voice.length; start += mtuInBytes) {
-      await messageCharacteristic!.write(
-          voice.sublist(
-              start,
-              start + mtuInBytes > voice.length
-                  ? voice.length
-                  : start + mtuInBytes),
-          withoutResponse: true);
-    }
+    await messageCharacteristic!.write(
+        Uint8List.fromList(
+            'SeekerInfo: deviceId - ${messageCharacteristic!.deviceId}, location - <<Some cords>>'
+                .codeUnits),
+        withoutResponse: true);
   }
 
   void disconnect() async {

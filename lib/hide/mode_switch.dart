@@ -42,6 +42,8 @@ class ModeSwitch extends HookConsumerWidget {
                       final player = AudioPlayer();
                       player
                           .play(UrlSource('https://mobcup.net/d/c3lpbxp8/mp3'));
+                    } else {
+                      ref.read(bleProvider.notifier).sendInfoByBLE();
                     }
                   },
                 ),
